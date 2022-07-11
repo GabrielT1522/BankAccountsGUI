@@ -53,7 +53,7 @@ public class InputAccountPanel extends JPanel
 
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         accountNumLabel = new JLabel("Account 1");
-        northPanel.add(accountNumLabel);
+        this.add(accountNumLabel);
 
         fNameLabel = new JLabel("First Name: ");
         fNameField = new JTextField();
@@ -159,11 +159,14 @@ public class InputAccountPanel extends JPanel
     }
 
     public void setAccountNumLabel(int numOfAccounts){
-        accountNumLabel.setText("Account" + " " + inputAccountModel.getAccountIndex()+" out of "+numOfAccounts);
-        System.out.println("Account" + " " + inputAccountModel.getAccountIndex()+" out of "+numOfAccounts);
+        //String numOfAccounts = String.valueOf(welcomePanel.getNumOfAccounts());
+        String accountIndex = String.valueOf(inputAccountModel.getAccountIndex());
+
+        accountNumLabel.setText("Account" + " " + accountIndex+" out of "+numOfAccounts);
+        System.out.println("Account" + " " + accountIndex+" out of "+numOfAccounts);
     }
 
-    public class InputAccountListener implements ActionListener {
+    /*public class InputAccountListener implements ActionListener {
         private InputAccountPanel inputAccountPanel;
 
         public InputAccountListener(InputAccountPanel wp) {
@@ -185,7 +188,5 @@ public class InputAccountPanel extends JPanel
                 inBalanceField.setText("");
             }
         }
-
-
-    }
+    }*/
 }

@@ -12,7 +12,8 @@ import java.awt.event.ActionListener;
 
 public class BankAccountsPanel extends JPanel
 {
-    private JPanel mainPanel;
+    private JPanel northPanel;
+    private JPanel centerPanel;
     private JPanel southPanel;
     private OutputAccountPanel outputAccountCard;
     private InputAccountPanel inputAccountCard;
@@ -23,15 +24,25 @@ public class BankAccountsPanel extends JPanel
     public JPanel deck;
 
     /*public BankAccountsPanel(){
+        welcomeCard = new WelcomePanel();
         inputAccountCard = new InputAccountPanel();
+        outputAccountCard = new OutputAccountPanel();
+        northPanel = new JPanel();
+        centerPanel = new JPanel();
+        southPanel = new JPanel();
+
+        northPanel.add(welcomeCard);
+
         this.setPreferredSize(new Dimension(400, 400));
-        this.add(inputAccountCard);
+        this.add(northPanel, BorderLayout.NORTH);
+        this.add(centerPanel, BorderLayout.CENTER);
+        this.add(southPanel, BorderLayout.SOUTH);
     }*/
 
     public BankAccountsPanel()
     {
 
-        mainPanel = new JPanel();
+        centerPanel = new JPanel();
         southPanel = new JPanel();
 
         layout = new CardLayout();
@@ -50,7 +61,7 @@ public class BankAccountsPanel extends JPanel
         deck.add(outputAccountCard, "2");
 
 
-        mainPanel.add(deck);
+        centerPanel.add(deck);
         layout.show(deck, "0");
 
         nextButton = new JButton("Next");
@@ -61,7 +72,7 @@ public class BankAccountsPanel extends JPanel
 
 
         //this.setLayout(new GridLayout(0, 1));
-        this.add(mainPanel);
+        this.add(centerPanel);
         this.add(southPanel);
     }
 

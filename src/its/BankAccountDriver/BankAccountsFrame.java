@@ -1,9 +1,6 @@
 package its.BankAccountDriver;
 
 import its.DefaultFrame.DefaultFrame;
-
-import javax.swing.*;
-
 public class BankAccountsFrame extends DefaultFrame
 {
     private BankAccountsPanel bankAccountsPanel;

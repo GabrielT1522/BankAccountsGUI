@@ -1,5 +1,6 @@
 package its.Welcome;
 
+import its.BankAccountDriver.BankAccountsPanel;
 import its.InputAccount.InputAccountPanel;
 
 import javax.swing.*;
@@ -17,9 +18,12 @@ public class WelcomePanel extends JPanel
     private JButton submitButton;
     private WelcomeListener welcomeListener;
     public JTextField noOfAccountsField;
+    private BankAccountsPanel basePanel;
 
     public WelcomePanel()
     {
+
+        //this.basePanel = bankAccountsPanel;
         centerPanel = new JPanel();
         southPanel = new JPanel();
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
@@ -73,16 +77,12 @@ public class WelcomePanel extends JPanel
         public void actionPerformed(ActionEvent evt) {
             String actionCommand = evt.getActionCommand();
 
+            int numOfAccounts = Integer.parseInt(noOfAccountsField.getText());
+            setNumOfAccounts(numOfAccounts);
+            inputAccountPanel.setAccountNumLabel(numOfAccounts);
+
             if (actionCommand.equals("Submit")) {
                 System.out.println("Submit button selected.");
-                try {
-                    int numOfAccounts = Integer.parseInt(noOfAccountsField.getText());
-                    setNumOfAccounts(numOfAccounts);
-                }catch (Exception e) {
-                    System.out.println("noOfAccountsField is Empty.");
-                }
-
-                inputAccountPanel.setAccountNumLabel(numOfAccounts);
 
                 if (getNumOfAccounts() == 1) {
                     accountsToBeCreatedLabel.setText(getNumOfAccounts() + " account will be created.");
@@ -96,6 +96,4 @@ public class WelcomePanel extends JPanel
             }
         }
     }
-
-
 }
