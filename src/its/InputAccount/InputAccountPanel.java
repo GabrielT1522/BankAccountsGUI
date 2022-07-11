@@ -6,6 +6,7 @@ import its.Welcome.WelcomePanel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class InputAccountPanel extends JPanel
@@ -127,11 +128,8 @@ public class InputAccountPanel extends JPanel
         }
     }
 
-
     public void processAccount()
     {
-        inputAccountModel = new InputAccountModel();
-        welcomePanel = new WelcomePanel();
         int arraySize = welcomePanel.getNumOfAccounts();
         int accType = inputAccountModel.getAccType();
         String firstName = fNameField.getText();
@@ -158,22 +156,36 @@ public class InputAccountPanel extends JPanel
         else{
             System.out.println("Error setting accType.");
         }
-
-        inputAccountModel.incrementAccount();
-
-        fNameField.setText("");
-        lNameField.setText("");
-        savingsButton.setSelected(false);
-        checkingButton.setSelected(false);
-        extraChargeField.setText("");
-        inBalanceField.setText("");
     }
 
     public void setAccountNumLabel(int numOfAccounts){
-        this.accountNumLabel.setText("Account" + " " + inputAccountModel.getAccountIndex()+" out of "+numOfAccounts);
+        accountNumLabel.setText("Account" + " " + inputAccountModel.getAccountIndex()+" out of "+numOfAccounts);
         System.out.println("Account" + " " + inputAccountModel.getAccountIndex()+" out of "+numOfAccounts);
     }
 
+    public class InputAccountListener implements ActionListener {
+        private InputAccountPanel inputAccountPanel;
+
+        public InputAccountListener(InputAccountPanel wp) {
+            inputAccountPanel = wp;
+        }
+
+        public void actionPerformed(ActionEvent evt) {
+            String actionCommand = evt.getActionCommand();
+
+            if (actionCommand.equals("Submit")) {
+                System.out.println("Submit button selected.");
+                inputAccountModel.incrementAccount();
+
+                fNameField.setText("");
+                lNameField.setText("");
+                savingsButton.setSelected(false);
+                checkingButton.setSelected(false);
+                extraChargeField.setText("");
+                inBalanceField.setText("");
+            }
+        }
 
 
+    }
 }

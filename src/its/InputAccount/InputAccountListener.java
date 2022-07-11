@@ -8,9 +8,9 @@ import its.Welcome.WelcomePanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class InputAccountListener implements ActionListener
+/*public class InputAccountListener implements ActionListener
 {
-    private InputAccountPanel inputAccountPanel;
+    /*private InputAccountPanel inputAccountPanel;
     private BankAccountsPanel bankAccountsPanel;
     private OutputAccountPanel outputAccountPanel;
     private WelcomePanel welcomePanel;
@@ -34,5 +34,4 @@ public class InputAccountListener implements ActionListener
             System.out.println("Num of accounts: "+welcomePanel.getNumOfAccounts());
             System.out.println("Submit button selected.");
         }
-    }
-}
+    }}*/

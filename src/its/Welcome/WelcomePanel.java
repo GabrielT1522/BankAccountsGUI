@@ -59,7 +59,8 @@ public class WelcomePanel extends JPanel
     }
 
 
-    public InputAccountPanel inputAccountPanel;
+    InputAccountPanel inputAccountPanel = new InputAccountPanel();
+
     public class WelcomeListener implements ActionListener
     {
 
@@ -71,7 +72,6 @@ public class WelcomePanel extends JPanel
 
         public void actionPerformed(ActionEvent evt) {
             String actionCommand = evt.getActionCommand();
-            inputAccountPanel = new InputAccountPanel();
 
             if (actionCommand.equals("Submit")) {
                 System.out.println("Submit button selected.");
