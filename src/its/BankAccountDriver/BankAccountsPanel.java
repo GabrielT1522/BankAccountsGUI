@@ -18,17 +18,17 @@ public class BankAccountsPanel extends JPanel
     private InputAccountPanel inputAccountCard;
     private WelcomePanel welcomeCard;
     private JButton nextButton;
-    //private BankAccountsListener bankAccountsListener;
+    private BankAccountsListener bankAccountsListener;
     public CardLayout layout;
     public JPanel deck;
 
-    public BankAccountsPanel(){
+    /*public BankAccountsPanel(){
         inputAccountCard = new InputAccountPanel();
         this.setPreferredSize(new Dimension(400, 400));
         this.add(inputAccountCard);
-    }
+    }*/
 
-    /*public BankAccountsPanel()
+    public BankAccountsPanel()
     {
 
         mainPanel = new JPanel();
@@ -84,6 +84,5 @@ public class BankAccountsPanel extends JPanel
                 System.out.println("Next button selected.");
             }
         }
-
-    }*/
+    }
 }
